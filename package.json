@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "license": "MIT",
+  "name": "runtime-environment-variables-example",
+  "engines": {
+    "node": "^18"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development NAME=world webpack-dev-server",
+    "build": "docker build -t runtime-environment-variables-example .",
+    "preview": "docker run --rm -p 8080:80 -e NAME=world runtime-environment-variables-example"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}
